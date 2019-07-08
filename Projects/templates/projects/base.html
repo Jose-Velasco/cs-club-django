@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'projects/css/base.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'projects/css/mobilenav.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+	{% if title %}
+	<title>Gavilan CS Club - {{ title }}</title>
+	{% else %}
+	<title>Gavilan Computer Science Club</title>
+	{% endif %}
+</head>
+<body>
+		<div id="wraper">
+
+			<!-- mobile menu(hamburger) -->
+			<div class="menu-wrap">
+				<input type="checkbox" id="toggle" class="toggler">
+				<div class="hamburger"><div></div></div>
+				<div class="menu">
+					<div>
+						<div>
+							<ul>
+								<li><a href="#">Home</a></li>
+								<li><a href="#">Meet the officers</a></li>
+								<li><a href="#">Projects</a></li>
+								<li><a href="#">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- desktop navbar -->
+			<div class="background">
+				<div class="background-inner">
+					
+					<header>
+						<div class="container">
+							<nav>
+								<h1 class="computerscience"><a href="#">Computer Science Club</a></h1>
+								<ul>
+									<li><a href="#">Meet the officers</a></li>
+									<li><a href="#">Projects</a></li>
+									<li><a href="#">Contact</a></li>
+								</ul>
+							</nav>
+						</div>
+					</header>					
+				</div>				
+			</div>
+	</div>
+
+ {% block content %}{% endblock %}
+
+ <div class="footer">Copyright &copy; 2014</div>
+ <script src="{% static 'projects/javascript/mobilenav.js' %}"></script>
+</body>
+</html>
