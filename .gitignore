@@ -99,3 +99,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+
+# django ekeditor testing if would be better to not inlcude thses files then 
+# just running python manage.py collectfiles while setting up project on another compuer
+ckeditor/
+admin/
