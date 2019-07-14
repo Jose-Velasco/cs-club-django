@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.urls import reverse
 
 class Project(models.Model):
 	title = models.CharField(max_length=60)
@@ -10,8 +11,14 @@ class Project(models.Model):
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 	author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True, blank=True)
 
+	# this will get the absolute url when interpolating in the html e.g. when using it in the hef for a image tag
+	def getAbsoluteUrl(self):
+		return reverse("projectDetail", kwargs={"projectId": self.id}) #f"projects/detail/{self.id}/"
+
+	# this will display the title of the post in the admin page
 	def __str__(self):
 		return self.title
 
+	# to order porjects when listed from newest to oldest
 	class Meta:
 		ordering = ["-timestamp"]

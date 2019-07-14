@@ -1,0 +1,15 @@
+{% extends "projectsHTML/base.html" %}
+{% block content %}
+
+
+		<img src="{{ MEDIA_URL }}{{ instance.image.url }}"><br>
+		{{ instance.title }}<br>
+		{{ instance.description }}<br>
+		{{ instance.timestamp }}<br>
+		{{ instance.author }}<br>
+		{{ instance.body | safe }}<br>
+		<br>
+		=======
+
+
+{% endblock content %}

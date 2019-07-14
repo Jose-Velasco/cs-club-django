@@ -4,12 +4,11 @@
 	{% for obj in Project_list %}
 
 		<img src="{{ MEDIA_URL }}{{ obj.image }}"><br>
-		{{ obj.title }}<br>
-		{{ obj.description }}<br>
-		{{ obj.timestamp }}<br>
-		{{ obj.author }}<br>
-		{{ obj.body | safe }}<br>
 		<br>
+		<p>{{ obj.id }} - <a href="{{ obj.getAbsoluteUrl }}">{{ obj.title }}</a></p>
+		<br>
+		<br>
+		<p>{{ obj.description }}</p>
 		=======
 
 	{% endfor %}
