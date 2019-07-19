@@ -1,0 +1,63 @@
+.project-main-wrapper {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+.project-width-wraper {
+	max-width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.project-image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+}
+
+.project-heading {
+	text-align: center;
+}
+
+.project-title {
+	margin-bottom: 0.3rem;
+}
+
+.project-date {
+	display: inline-block;
+	color: #999;
+	margin-right: 0.4rem;
+	margin-left: 0.4rem
+	margin-bottom: 0.1rem;
+}
+
+.project-posted-by {
+	display: inline-block;
+	margin-left: 0.4rem;
+	margin-right: 0.4rem;
+	padding: 0.2rem;
+	text-transform: uppercase;
+}
+
+.project-divider {
+	width: 100%;
+	height: 1px;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	background-color: #dedede;
+}
+
+ /* phone view */
+@media only screen and  (max-width: 768px){
+	.project-body img {
+		height: auto !important;
+		width: 65% !important;
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+		/* !important is important because it will override the inline css that django-ckeditor applies
+			to hotfix mobile viewing */
+	}
+}
