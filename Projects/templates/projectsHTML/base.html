@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'projects/css/mobilenav.css' %}">
 	<link rel="icon" href="{% static 'projects/staticImages/favicon.ico' %}" type="image/gif" sizes="16x16">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	{% block additionalHead %}{% endblock %}
 
 	{% if title %}
 	<title>Gavilan CS Club - {{ title }}</title>
@@ -56,6 +57,7 @@
 			</div>
 	</div>
 
+	<!-- this is were the content is loaded in between the block content and endblock content -->
  {% block content %}{% endblock %}
 
  <div class="footer">Copyright &copy; 2014</div>

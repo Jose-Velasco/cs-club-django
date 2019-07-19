@@ -1,17 +1,29 @@
 {% extends "projectsHTML/base.html" %}
+{% load static %}
+{% block additionalHead %}
+<link rel="stylesheet" href="{% static 'projects/css/projectshtml.css' %}">
+{% endblock %}
 {% block content %}
 
-	{% for obj in Project_list %}
+	<div class="projects-content-wrapper">
+		<div class="projects-list-wrapper">
+			{% for obj in Project_list %}
+				
+				<div class="projects-list-single">
+					<a href="{{ obj.getAbsoluteUrl }}">
+						<div class="image-wrapper">
+							<img src="{{ MEDIA_URL }}{{ obj.image }}">
+						</div>
+						<div class="projects-p-wrapper">
+							<p class="projects-title"><!-- {{ obj.id }} - -->{{ obj.title }}</p>
+							<p>{{ obj.description }}</p>
+						</div>
+					</a>
+				</div>
 
-		<img src="{{ MEDIA_URL }}{{ obj.image }}"><br>
-		<br>
-		<p>{{ obj.id }} - <a href="{{ obj.getAbsoluteUrl }}">{{ obj.title }}</a></p>
-		<br>
-		<br>
-		<p>{{ obj.description }}</p>
-		=======
-
-	{% endfor %}
+			{% endfor %}
+		</div>
+	</div>
 
 
 {% endblock content %}

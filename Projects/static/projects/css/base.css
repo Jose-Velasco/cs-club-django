@@ -5,6 +5,7 @@
     --menu-speed: 0.75s;
 }
 
+/* this will add global css reset */
 * {
     box-sizing: border-box;
     margin: 0;
