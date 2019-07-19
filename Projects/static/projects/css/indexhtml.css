@@ -1,0 +1,15 @@
+.index-BG {
+	background: url("/static/projects/staticImages/indexBG.jpg") fixed center center/cover;
+	color: #fff;
+}
+
+/* .welcome and filler-div css delete if needed */
+.index-welcome {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.index-filler-div {
+    text-align: center;
+}

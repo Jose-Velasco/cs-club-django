@@ -26,16 +26,6 @@ body {
     z-index: -1;
 
 }
-/* .welcome and filler-div css delete if needed */
-.welcome {
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.filler-div {
-    text-align: center;
-}
 
 /* foreground */
 .background {
@@ -79,7 +69,8 @@ body {
 }
 
 .container nav {
-    padding-top: 2rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
