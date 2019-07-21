@@ -7,22 +7,41 @@
 
 	<div class="projects-content-wrapper">
 		<div class="projects-list-wrapper">
-			{% for obj in Project_list %}
+			{% for project in Project_list %}
 				
 				<div class="projects-list-single">
-					<a href="{{ obj.getAbsoluteUrl }}">
+					<a href="{{ project.getAbsoluteUrl }}">
 						<div class="image-wrapper">
-							<img src="{{ MEDIA_URL }}{{ obj.image }}">
+							<img src="{{ MEDIA_URL }}{{ project.image }}">
 						</div>
 						<div class="projects-p-wrapper">
-							<p class="projects-title"><!-- {{ obj.id }} - -->{{ obj.title }}</p>
-							<p>{{ obj.description }}</p>
+							<p class="projects-title"><!-- {{ obj.id }} - -->{{ project.title }}</p>
+							<p>{{ project.description }}</p>
 						</div>
 					</a>
 				</div>
 
 			{% endfor %}
 		</div>
+
+		<div class="projects-pagination-wrapper">
+			<span class="step-links">
+			{% if Project_list.has_previous %}
+			<a href="?{{ page_request_var }}=1">&laquo; first</a>
+			<a href="?{{ page_request_var }}={{ Project_list.previous_page_number }}">previous</a>
+			{% endif %}
+
+			<span class="projects-current-pages">
+			Page {{ Project_list.number }} of {{ Project_list.paginator.num_pages }}.
+			</span>
+
+			{% if Project_list.has_next %}
+			<a href="?{{ page_request_var }}={{ Project_list.next_page_number }}">next</a>
+			<a href="?{{ page_request_var }}={{ Project_list.paginator.num_pages }}">last &raquo;</a>
+			{% endif %}
+			</span>
+		</div>
+		
 	</div>
 
 

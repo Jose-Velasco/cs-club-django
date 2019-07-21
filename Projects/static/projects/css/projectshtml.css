@@ -66,3 +66,12 @@ body {
 	font-size: 0.9rem;
 	padding: 1rem;
 }
+
+.projects-pagination-wrapper {
+	text-align: center;
+	font-size: 1.3rem;
+}
+
+.projects-current-pages {
+	font-weight: 700;
+}

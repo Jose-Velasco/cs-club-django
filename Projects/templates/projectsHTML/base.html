@@ -30,7 +30,7 @@
 								<li><a href="{% url 'site-home' %}">Home</a></li>
 								<li><a href="#">Meet the officers</a></li>
 								<li><a href="{% url 'projects' %}">Projects</a></li>
-								<li><a href="#">Contact</a></li>
+								<!-- <li><a href="#">Contact</a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -47,20 +47,36 @@
 								<ul>
 									<li><a href="#">Meet the officers</a></li>
 									<li><a href="{% url 'projects' %}">Projects</a></li>
-												<!-- use %% in {} to interpolate the name of the url that was defined in the ulr.py of Projects folder -->
-									<li><a href="#">Contact</a></li>
+										<!-- use %% in {} to interpolate the name of the url that was defined in the ulr.py of Projects folder -->
+									<!-- <li><a href="#">Contact</a></li> -->
 								</ul>
 							</nav>
 						</div>
-					</header>					
-				</div>				
+					</header>
+				</div>
 			</div>
-	</div>
 
-	<!-- this is were the content is loaded in between the block content and endblock content -->
- {% block content %}{% endblock %}
 
- <div class="footer">Copyright &copy; 2014</div>
+			<!-- this is were the content is loaded in between the block content and endblock content -->
+			{% block content %}{% endblock %}
+
+			<!-- this is a hacky way of making the footer stick to the bottom of page
+			 if there is not enough content on the page being displayes -->
+			<div class="push"></div>
+		</div>
+			<!-- see class push -->
+			<div class="footer">
+				<div class="footer-social-media-wrapper">
+					<h3>Social Media</h3>
+					<a href="https://discord.gg/Mgt3yh6" target="_blank">Discord</a>
+				</div>
+				<div class="footer-copyright">
+					<p>Copyright &copy; 2019</p>
+				</div>
+			</div>
+	
+ 
+
  <script src="{% static 'projects/javascript/mobilenav.js' %}"></script>
 </body>
 </html>
