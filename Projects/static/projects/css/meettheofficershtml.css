@@ -1,0 +1,83 @@
+.officerHeadingContainer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.officerTitle {
+    color: #2c3e50;
+    font-size: 2.9rem;
+    font-weight: 700;
+    position: relative;
+    display: block;
+    padding-bottom: 1rem;
+}
+
+.officerTitle:after {
+    height: 4px;
+    background-color: #cc0000;
+}
+
+.officerTitle::after {
+    background-color: #cc0000;
+    left: 50%;
+    width: 100px;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transform: translate(-50%, 0);
+}
+
+.officer-content-wraper {
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.officer-content-row {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .officer-content-row {
+        display: block;
+    }
+}
+
+.officer-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.officer-content-row h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 0.50em;
+    margin-top: 0.50em;
+}
+
+.officer-content-row p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 0.50em;
+}
+
+.officer-content-img {
+    margin-top: 1.5em;
+    margin-bottom: 0.90em;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+}

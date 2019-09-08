@@ -9,7 +9,7 @@ def home(request):
 	#						^^^^ this will be rendered when it is requested by the url
 
 def meettheofficers(request):
-	return render(request, 'projectsHTML/index.html')
+	return render(request, 'projectsHTML/meettheofficers.html')
 
 def projectDetail(request, projectId):
 	# this will get a specific project based on it id which will be used to be render details in projectdetail.html

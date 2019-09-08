@@ -28,7 +28,7 @@
 						<div>
 							<ul>
 								<li><a href="{% url 'site-home' %}">Home</a></li>
-								<li><a href="#">Meet the officers</a></li>
+								<li><a href="{% url 'meettheofficers' %}">Meet the officers</a></li>
 								<li><a href="{% url 'projects' %}">Projects</a></li>
 								<!-- <li><a href="#">Contact</a></li> -->
 							</ul>
@@ -45,9 +45,10 @@
 							<nav>
 								<h1 class="computerscience"><a href="{% url 'site-home' %}">Computer Science Club</a></h1>
 								<ul>
-									<li><a href="#">Meet the officers</a></li>
+									<li><a href="{% url 'meettheofficers' %}">Meet the officers</a></li>
 									<li><a href="{% url 'projects' %}">Projects</a></li>
-										<!-- use %% in {} to interpolate the name of the url that was defined in the ulr.py of Projects folder -->
+										<!-- use %% in {} to 
+											interpolate the name of the url that was defined in the ulr.py of Projects folder -->
 									<!-- <li><a href="#">Contact</a></li> -->
 								</ul>
 							</nav>
@@ -64,7 +65,7 @@
 			 if there is not enough content on the page being displayes -->
 			<div class="push"></div>
 		</div>
-			<!-- see class push -->
+			<!-- see class "push" -->
 			<div class="footer">
 				<div class="footer-social-media-wrapper">
 					<h3>Social Media</h3>

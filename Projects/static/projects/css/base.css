@@ -73,6 +73,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: right;
+    align-items: center;
 }
 
 .footer-social-media-wrapper h3 {
