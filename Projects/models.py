@@ -22,3 +22,13 @@ class Project(models.Model):
 	# to order porjects when listed from newest to oldest
 	class Meta:
 		ordering = ["-timestamp"]
+
+
+class Officer(models.Model):
+	image = models.ImageField(upload_to='images', null=True, blank=True)
+	officerName = models.CharField(max_length=50)
+	officerPostion = models.CharField( max_length=65)
+	isActivte = models.BooleanField(default=False)
+
+	def __str__(self):
+		return self.officerName

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Project
+from .models import Project, Officer
 from django.conf import settings
 from django.core.paginator import Paginator
 
@@ -9,7 +9,15 @@ def home(request):
 	#						^^^^ this will be rendered when it is requested by the url
 
 def meettheofficers(request):
-	return render(request, 'projectsHTML/meettheofficers.html')
+	activeOfficersList = Officer.objects.filter(isActivte=True)
+	notActiveOfficers = Officer.objects.filter(isActivte=False)
+
+	context = {
+		"activeOfficers": activeOfficersList,
+		"notActivteOfficers": notActiveOfficers,
+		"MEDIA_URL": settings.MEDIA_URL,
+	}
+	return render(request, 'projectsHTML/meettheofficers.html', context)
 
 def projectDetail(request, projectId):
 	# this will get a specific project based on it id which will be used to be render details in projectdetail.html
@@ -30,6 +38,8 @@ def projects(request):
 	queryset = paginator.get_page(page)
 	context = {
 		"Project_list": queryset,
+		# do not forget to pass the url so it can find the right path to the images(might have to be adjusted on deplyment
+		# if there are any erros)
 		"MEDIA_URL": settings.MEDIA_URL,
 		"page_request_var": page_request_var,
 

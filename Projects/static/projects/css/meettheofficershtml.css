@@ -4,7 +4,8 @@ html {
 
 .officerHeadingContainer {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 1em;
+    margin-bottom: 7em;
 }
 
 /* wave header design top and bottom */
@@ -172,5 +173,5 @@ html {
     width: 10em;
     height: 10em;
     border-radius: 50%;
-	border: 3px solid #eb648c;
+	border: 3px solid rgba(154, 0, 41, 1);
 }

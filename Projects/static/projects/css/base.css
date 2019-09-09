@@ -51,7 +51,7 @@ body {
 
 /* footer */
 .footer {
-    height: 142px;
+    height: 10em;
     margin: 0 auto;
     display: flex;
     flex-direction: column;

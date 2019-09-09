@@ -18,75 +18,19 @@
 
 	<div class="officer-content-wraper">
 		<div class="officer-content-row">
-
-			<div class="officer-content">
-				<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-				<h2 class="officer-content-name">Jose Velasco </h2>
-				<p class="officer-content-title">Public Relations Chair</p>
-			</div>
-
-			<div class="officer-content">
-				<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-				<h2 class="officer-content-name">Jose Velasco </h2>
-				<p class="officer-content-title">Public Relations Chair</p>
-			</div>
-
-			<div class="officer-content">
-				<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-				<h2 class="officer-content-name">Jose Velasco </h2>
-				<p class="officer-content-title">Public Relations Chair</p>
-			</div>
-
-		<div class="officer-content">
-				<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-				<h2 class="officer-content-name">Jose Velasco </h2>
-				<p class="officer-content-title">Public Relations Chair</p>
-		</div>
-
-			<div class="officer-content">
-					<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-					<h2 class="officer-content-name">Jose Velasco Juarez JR</h2>
-					<p class="officer-content-title">Public Relations Chair</p>
-			</div>
-
-
-			<div class="officer-content">
-					<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-					<h2 class="officer-content-name">Jose Velasco </h2>
-					<p class="officer-content-title">Public Relations Chair</p>
-				</div>
-	
+			<!-- useing djangos for looping method to loog through th list of object
+				 and string interpolation to display content based on the loops iteration -->
+			{% for officer in activeOfficers %}
 				<div class="officer-content">
-					<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-					<h2 class="officer-content-name">Jose Velasco </h2>
-					<p class="officer-content-title">Public Relations Chair</p>
+					<!-- using media_url to palce the file path to where the images are at -->
+						<img class="officer-content-img" src="{{ MEDIA_URL }}{{ officer.image }}">
+						<h2 class="officer-content-name">{{ officer.officerName }}</h2>
+						<p class="officer-content-title">{{ officer.officerPostion }}</p>
 				</div>
-	
-				<div class="officer-content">
-					<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-					<h2 class="officer-content-name">Jose Velasco </h2>
-					<p class="officer-content-title">Public Relations Chair</p>
-				</div>
-	
-			<div class="officer-content">
-					<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-					<h2 class="officer-content-name">Jose Velasco </h2>
-					<p class="officer-content-title">Public Relations Chair</p>
-			</div>
-	
-				<div class="officer-content">
-						<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-						<h2 class="officer-content-name">Jose Velasco Juarez JR</h2>
-						<p class="officer-content-title">Public Relations Chair</p>
-				</div>
+			{% endfor %}
 
 		</div>
 	</div>
-
-
-
-
-
 
 	<div class="officersHeadingSection">
 		<div class="officerHeadingContainer">
@@ -97,37 +41,14 @@
 	<div class="officer-content-wraper">
 			<div class="officer-content-row">
 	
+				{% for officer in notActivteOfficers %}
 				<div class="officer-content">
-					<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-					<h2 class="officer-content-name">Jose Velasco </h2>
-					<p class="officer-content-title">Public Relations Chair</p>
+					<img class="officer-content-img" src="{{ MEDIA_URL }}{{ officer.image }}">
+					<h2 class="officer-content-name">{{ officer.officerName }}</h2>
+					<p class="officer-content-title">{{ officer.officerPostion }}</p>
 				</div>
-	
-				<div class="officer-content">
-					<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-					<h2 class="officer-content-name">Jose Velasco </h2>
-					<p class="officer-content-title">Public Relations Chair</p>
-				</div>
-	
-				<div class="officer-content">
-					<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-					<h2 class="officer-content-name">Jose Velasco </h2>
-					<p class="officer-content-title">Public Relations Chair</p>
-				</div>
-	
-			<div class="officer-content">
-					<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-					<h2 class="officer-content-name">Jose Velasco </h2>
-					<p class="officer-content-title">Public Relations Chair</p>
-			</div>
-	
-				<div class="officer-content">
-						<img class="officer-content-img" src="../../static/projects/staticImages/indexBG.jpg" alt="">
-						<h2 class="officer-content-name">Jose Velasco Juarez JR</h2>
-						<p class="officer-content-title">Public Relations Chair</p>
-				</div>
-	
-	
+				{% endfor %}
+		
 			</div>
 		</div>
 	
