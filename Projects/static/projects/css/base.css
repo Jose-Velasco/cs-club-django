@@ -1,7 +1,7 @@
 /* css variables */
 :root {
-    --primary-color: rgba(0, 0, 0, 0.85);
-    --overlay-color: rgba(18, 34, 48, 0.85);
+    --primary-color: rgba(154, 0, 41, 1);
+    --overlay-color: rgba(24, 61, 110, 0.85);
     --menu-speed: 0.75s;
 }
 
@@ -55,7 +55,7 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(24, 61, 110, 1);
     position: relative;
     left: 0;
     bottom: 0;

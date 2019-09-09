@@ -105,7 +105,7 @@ section {
 .hero {
 	width: 100%;
 	height: 80vh;
-	background: linear-gradient(135deg, rgba(49,24,131,0.9) 0%, rgba(72,56,149,0.8) 100%), url("/static/projects/staticImages/CSindexBG.jpg") center no-repeat;
+	background: linear-gradient(135deg, rgba(24, 61, 110, 0.9) 0%, rgba(24, 61, 110, 0.8) 100%), url("/static/projects/staticImages/CSindexBG.jpg") center no-repeat;
 	background-size: cover;
 	position: relative;
 }
@@ -193,7 +193,7 @@ section {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: linear-gradient(135deg, rgba(49,24,131,0.9) 0%, rgba(72,56,149,0.8) 100%);
+	background-image: linear-gradient(135deg, rgba(154, 0, 41, 0.9) 0%, rgba(154, 0, 41, 0.8) 100%);
 	z-index: -1;
 	overflow: hidden;
 }
@@ -220,7 +220,7 @@ section {
 .testimonials {
 	width: 100%;
 	height: 80vh;
-	background: linear-gradient(135deg, rgba(49,24,131,0.9) 0%, rgba(72,56,149,0.8) 100%), url("/static/projects/staticImages/CSindexBG.jpg") center no-repeat fixed;
+	background: linear-gradient(135deg, rgba(24, 61, 110, 0.9) 0%, rgba(24, 61, 110, 0.8) 100%), url("/static/projects/staticImages/CSindexBG.jpg") center no-repeat fixed;
 	background-size: cover;
 	position: relative;
 }
