@@ -32,3 +32,33 @@ class Officer(models.Model):
 
 	def __str__(self):
 		return self.officerName
+
+class Card1(models.Model):
+	header = models.CharField(max_length=40)
+	description = models.TextField(blank=True, null=True)
+
+	def __str__(self):
+		return self.header
+	class Meta:
+		ordering = ["-pk"]
+	
+
+class Card2(models.Model):
+	header = models.CharField(max_length=40)
+	description = models.TextField(blank=True, null=True)
+
+	def __str__(self):
+		return self.header
+
+	class Meta:
+		ordering = ["-pk"]
+
+class Card3(models.Model):
+	header = models.CharField(max_length=40)
+	description = models.TextField(blank=True, null=True)
+
+	def __str__(self):
+		return self.header
+
+	class Meta:
+		ordering = ["-pk"]

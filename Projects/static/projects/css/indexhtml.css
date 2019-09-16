@@ -123,10 +123,18 @@ section {
 }
 .main-message {
 	width: 100%;
-	max-width: 50rem;
+	/* max-width: 50rem; */
 	color: #fafafa;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	transform: translateY(20%);
+}
+
+.main-message h3 {
+	text-transform: uppercase;
+}
+
+.main-message h1 {
+	text-transform: uppercase;
 }
 
 .main-message h3 {
@@ -138,9 +146,9 @@ section {
 	margin: 1rem 0;
 }
 
-.main-message p {
+/* .main-message p {
 	text-transform: lowercase;
-}
+} */
 
 /* experience the csis */
 .experience-csis {
@@ -177,7 +185,7 @@ section {
 
 .activities-grid-item {
 	height: 20rem;
-	padding: 5rem;
+	padding: 4.5rem;
 	color: #fafafa;
 	position: relative;
 	display: flex;
@@ -250,6 +258,7 @@ section {
 	padding: 0 1.5rem;
 	margin-bottom: 2rem;
 	position: relative; 
+	font-size: 2rem;
 }
 
 .testimonial-student img {
@@ -276,9 +285,32 @@ section {
 }
 
 /* media queries */
+
+
+@media screen and (min-width: 320px) {
+	.main-message {
+		transform: translateY(-5%);
+	}
+	.main-message h1 {
+		font-size: 2rem;
+	}
+
+	.activities-grid-item {
+		padding: 5rem;
+		max-width: 320px;
+	}
+}
+
 @media screen and (min-width: 350px) {
 	.main-message {
-		transform: translateY(40%);
+		transform: translateY(30%);
+	}
+	.main-message h1 {
+		font-size: 2rem;
+	}
+
+	.activities-grid-item {
+		max-width: none;
 	}
 }
 

@@ -1,11 +1,20 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Project, Officer
+from .models import Project, Officer, Card1, Card2, Card3
 from django.conf import settings
 from django.core.paginator import Paginator
 
 def home(request):
-	return render(request, 'projectsHTML/index.html')
+	card1List = Card1.objects.first()
+	card2List = Card2.objects.first()
+	card3List = Card3.objects.first()
+
+	context = {
+		"card1": card1List,
+		"card2": card2List,
+		"card3": card3List,
+	}
+	return render(request, 'projectsHTML/index.html', context)
 	#						^^^^ this will be rendered when it is requested by the url
 
 def meettheofficers(request):
