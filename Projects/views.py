@@ -1,8 +1,13 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import JsonResponse
 from .models import Project, Officer, Card1, Card2, Card3
 from django.conf import settings
 from django.core.paginator import Paginator
+from django.views import View
+import requests
+import json
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 def home(request):
 	card1List = Card1.objects.first()
@@ -57,3 +62,18 @@ def projects(request):
 
 def contact(request):
 	return render(request, 'projectsHTML/index.html')
+
+# using this to temp solve issues when trying to reset password on my 
+# flashcard app(the issue comes because my flashcard app API uses http
+# and not https thus firebase will not send post request to servers
+# that are not sequred with https & i do not want to buy another domain)
+# decorator allows me to receive post request from external site that i
+# have not provided csrf tokens for
+@method_decorator(csrf_exempt, name='dispatch')
+class FlashcardAppPasswordRest(View):
+	def post(self, request, *args, **kwargs):
+		url = "http://45.79.225.82/password/reset/confirm/"
+		body_unicode = request.body.decode('utf-8')
+		body = json.loads(body_unicode)
+		req = requests.post(url, json = body)
+		return JsonResponse(req.json(), status=req.status_code)

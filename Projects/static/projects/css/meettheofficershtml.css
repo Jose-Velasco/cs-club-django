@@ -163,12 +163,14 @@ html {
     font-size: 1.8rem;
     margin-bottom: 0.50em;
     margin-top: 0.50em;
+    max-width: 14.6rem;
 }
 
 .officer-content-row p {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 0.50em;
+    max-width: 14.6rem;
 }
 
 .officer-content-img {

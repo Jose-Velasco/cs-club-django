@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'Projects.apps.ProjectsConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'corsheaders',
 ]
 
 # this is used to be able to use CKEditor in the admin projects page will most likely need to be
@@ -56,12 +57,15 @@ CKEDITOR_IMAGE_BACKEND = "pillow"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True   
 
 ROOT_URLCONF = 'Club_Website.urls'
 
