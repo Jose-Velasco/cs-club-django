@@ -396,10 +396,10 @@ input[type=submit]:hover {
 }
 	
 /* Style the container/contact section */
-.contact-textbox/container {
+.contact-container {
 	border-radius: 5px;
 	background-color: #f2f2f2;
-	padding: 10px;
+	padding:10px;
 }
 	
 /* Create two columns that float next to eachother */
@@ -408,14 +408,19 @@ input[type=submit]:hover {
 	width: 50%;
 	margin-top: 6px;
 	padding: 20px;
+	position: relative;
 }
 
 /* Contact form img adjustments */
 .contact-column img {
+	display: block;
 	border-radius: 8px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	max-width: 100%;
 	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	
 }
 	
 	/* Clear floats after the columns */
@@ -426,8 +431,8 @@ input[type=submit]:hover {
 }
 	
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-	.contact-textbox/container, input[type=submit] {
+@media screen and (max-width: 768px) {
+	.contact-column, input[type=submit] {
 	width: 100%;
 	margin-top: 0;
 	}
