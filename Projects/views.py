@@ -1,28 +1,38 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import JsonResponse, HttpResponse
-from .models import Project, Officer, Card1, Card2, Card3
+from django.http import JsonResponse, HttpResponseRedirect
+from .models import Project, Officer, Card1, Card2, Card3, ContactForm
 from django.conf import settings
 from django.core.paginator import Paginator
 from django.views import View
 import requests
 import json
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.utils.decorators import method_decorator
+from .forms import ContactUsForm
+from django import forms
 
+@csrf_protect
 def home(request):
 	card1List = Card1.objects.first()
 	card2List = Card2.objects.first()
 	card3List = Card3.objects.first()
+	form = ContactUsForm()
 
 	context = {
 		"card1": card1List,
 		"card2": card2List,
 		"card3": card3List,
+		"form": form,	
 	}
-
 	if request.method == "POST":
-		print("form has been submittted")
-		return HttpResponse("POST req has be received and closed")
+		form = ContactUsForm(request.POST)
+		if form.is_valid():
+			name = form.cleaned_data["name"]
+			email = form.cleaned_data["email"]
+			subject = form.cleaned_data["subject"]
+			newContactForm = ContactForm(name=name,email=email,subject=subject)
+			newContactForm.save()
+		return HttpResponseRedirect(request.path_info)
 
 	return render(request, 'projectsHTML/index.html', context)
 	#						^^^^ this will be rendered when it is requested by the url
