@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .models import Project, Officer, Card1, Card2, Card3
 from django.conf import settings
 from django.core.paginator import Paginator
@@ -19,6 +19,11 @@ def home(request):
 		"card2": card2List,
 		"card3": card3List,
 	}
+
+	if request.method == "POST":
+		print("form has been submittted")
+		return HttpResponse("POST req has be received and closed")
+
 	return render(request, 'projectsHTML/index.html', context)
 	#						^^^^ this will be rendered when it is requested by the url
 

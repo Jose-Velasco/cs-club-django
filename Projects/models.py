@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
+from django.core.validators import MaxLengthValidator
 
 class Project(models.Model):
 	title = models.CharField(max_length=60)
@@ -62,3 +63,12 @@ class Card3(models.Model):
 
 	class Meta:
 		ordering = ["-pk"]
+
+class ContactForm(models.Model):
+	read = models.BooleanField(default=False)
+	name = models.CharField(max_length=20, blank=True, null=True)
+	email = models.EmailField(max_length=50, blank=True, null=True, unique=False)
+	subject = models.TextField(validators=[MaxLengthValidator(250)], null=True, blank=True)
+
+	def __str__(self):
+		return self.name
